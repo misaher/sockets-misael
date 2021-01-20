@@ -1,5 +1,6 @@
 const  express = require('express') 
 const Sockets  =  require('./sockets');
+const  cors  = require('cors');
 
 /// Servidor de sockets 
 const http = require('http');
@@ -17,7 +18,11 @@ class Server{
       this.io = socketio(this.server,{ /*Configuraciones*/});
   }
   midelwares(){
+
     this.app.use(express.static(path.resolve(__dirname, '../public')));
+     // cors
+    this.app.use(cors()); 
+
   }
    /////
    configuracionesSockets(){
