@@ -63,7 +63,7 @@
         const  sendJ = document.querySelector("#sendJ");
         const  sendJ2 = document.querySelector("#mensajesJ"); //mensajesM
         const  sendM = document.querySelector("#mensajesM");
-        const socket = io('http://localhost:8080');
+        const socket = io('https://react-socket-server-mhg.herokuapp.com/');
         const  uno= document.querySelector("#form1");
         const  dos= document.querySelector("#form2");
 
@@ -80,7 +80,7 @@
        /////////////////----------------->>>>
         dos.addEventListener('submit',(e)=>{
                   e.preventDefault();
-                  
+
                   socket.emit('mensaje-clieJ',{
                   msg:sendJ.value,
                   nombre: 'Juan'
